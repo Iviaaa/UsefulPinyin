@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <title>Learn Pinyin</title>
+    <link rel="icon" type="image/png" href="images/favcon.png" />
+    <style>
+    </style>
+    <!--LINK JQUERY-->
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="recognizer">
+        <h1>外婆您好！</h1>
+        <p>请点击屏幕开始学习～</p>
+        <div>
+            <p class="output"><em>等待识别中……</em></p>
+            <button class="hint">请开始说话</button>
+            <p id="pinyin"><em>拼音转换中……</em></p>
+
+        </div>
+        <button onclick="translateMe()">开始转换</button>
+
+        <div> <span id='q'>q</span></div>
+        <div> <span id='w'>w</span></div>
+        <div> <span id='e'>e</span></div>
+        <div> <span id='r'>r</span></div>
+        <div> <span id='q'>q</span></div>
+        <div> <span id='q'>q</span></div>
+        <div> <span id='q'>q</span></div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/pinyin-pro"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script>
+        var { pinyin } = pinyinPro;
+        function translateMe() {
+            var chineseText = document.querySelector('.output').textContent;
+            var pinyinText = getPinyin(chineseText);
+            document.getElementById('pinyin').innerText = pinyinText;
+        }
+
+        function getPinyin(text) {
+            return pinyin(text, {
+                    toneType: 'none'
+                });
+        }
+
+    </script>
+
+</body>
+
+</html>

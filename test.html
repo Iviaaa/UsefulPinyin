@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese to Pinyin Translator</title>
+</head>
+
+<body>
+    <input type="text" id="chineseInput" placeholder="Enter Chinese text">
+    <button onclick="translateMe()">Translate</button>
+    <p id="pinyinOutput">？？</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/pinyin-pro"></script>
+    <script>
+        var { pinyin } = pinyinPro;
+        console.log(pinyin('好吧'));
+        function translateMe() {
+            var chineseText = document.getElementById('chineseInput').value;
+            var pinyinText = getPinyin(chineseText);
+            console.log(pinyinText);
+            document.getElementById('pinyinOutput').innerText = pinyinText;
+        }
+
+        function getPinyin(text) {
+            // Ensure pinyin function is defined in the global scope
+                return pinyin(text, {
+                    toneType: 'none'
+                });
+        }
+    </script>
+</body>
+
+</html>
