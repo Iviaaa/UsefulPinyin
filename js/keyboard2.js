@@ -44,8 +44,9 @@ function learnPinyin(key){
     element.style.color = "blue";
 };
 
-var inputText = document.getElementById('inputText');
+const keys = document.querySelectorAll('.key');
 
-inputText.addEventListener("keyup", function(e) {
-    learnPinyin(e.key);
-});
+keys.forEach(el => el.addEventListener('click', event => {
+  console.log(event.target.getAttribute("data-el"));
+  learnPinyin(el.textContent);
+}));

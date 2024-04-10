@@ -1,0 +1,9 @@
+.keyboard{
+    color: blue;
+    font-size:64px;
+    transition: color 1s;
+}
+
+.key{
+    color: blue;
+}

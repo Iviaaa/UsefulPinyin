@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8" lan="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
     <title>Learn Pinyin</title>
@@ -26,14 +26,12 @@
         </div>
         <button onclick="translateMe()">开始转换</button>
 
-        <div> <span id='q'>q</span></div>
-        <div> <span id='w'>w</span></div>
-        <div> <span id='e'>e</span></div>
-        <div> <span id='r'>r</span></div>
-        <div> <span id='q'>q</span></div>
-        <div> <span id='q'>q</span></div>
-        <div> <span id='q'>q</span></div>
+        <div class="keyboard"><span id='q'>q</span><span id='w'>w</span><span id='e'>e</span><span id='r'>r</span><span id='t'>t</span><span id='y'>y</span><span id='u'>u</span><span id='i'>i</span><span id='o'>o</span><span id='p'>p</span></div>
+        <div class="keyboard"> <span id='a'>a</span><span id='s'>s</span><span id='d'>d</span><span id='f'>f</span><span id='g'>g</span><span id='h'>h</span><span id='j'>j</span><span id='k'>k</span><span id='l'>l</span></div>
+        <div class="keyboard"><span id='z'>z</span><span id='x'>x</span><span id='c'>c</span><span id='v'>v</span><span id='b'>b</span><span id='n'>n</span><span id='m'>m</span></div>
 
+        <label for="text">写入文字</label>
+        <input type="text" id="inputText" name="text">
 
 
     </div>
@@ -41,18 +39,6 @@
     <script src="js/speech.js"></script>
     <script src="js/keyboard.js"></script>
     <script>
-        var { pinyin } = pinyinPro;
-        function translateMe() {
-            var chineseText = document.querySelector('.output').textContent;
-            var pinyinText = getPinyin(chineseText);
-            document.getElementById('pinyin').innerText = pinyinText;
-        }
-
-        function getPinyin(text) {
-            return pinyin(text, {
-                    toneType: 'none'
-                });
-        }
 
     </script>
 

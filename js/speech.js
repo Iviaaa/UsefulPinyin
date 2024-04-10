@@ -19,13 +19,11 @@ const hints = document.querySelector(".hint");
 
 hints.onclick = () => {
   recognition.start();
-  console.log("Ready to receive a color command.");
 };
 
 recognition.onresult = (event) => {
   const text = event.results[0][0].transcript;
-  diagnostic.textContent = `Result received: ${text}.`;
-  console.log(`Confidence: ${event.results[0][0].confidence}`);
+  diagnostic.textContent = `${text}`;
 };
 
 recognition.onspeechend = () => {
