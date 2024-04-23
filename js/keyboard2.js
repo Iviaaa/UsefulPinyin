@@ -5,6 +5,7 @@ var currentLetter = '';
 var currentIndex = 0;
 var { pinyin } = pinyinPro;
 function translateMe() {
+    console.log("called");
     var chineseText = document.querySelector('.output').textContent;
     pinyinText = getPinyin(chineseText);
     document.getElementById('pinyin').innerText = pinyinText;
@@ -38,6 +39,7 @@ function learnPinyin(key){
         currentIndex = currentIndex % pinyinText.length;
         pressedKey.style.backgroundColor = "transparent";
         var audio = new Audio('audio/' + key + '.mp3');
+        // prompt new input or one more practice
         audio.play();
         highlight();
     }

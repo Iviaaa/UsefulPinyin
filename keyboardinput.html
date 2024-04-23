@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lan="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <title>Learn Pinyin</title>
+    <link rel="icon" type="image/png" href="images/favcon.png" />
+    <style>
+    </style>
+    <!--LINK JQUERY-->
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div class="recognizer">
+        <h1>外婆您好！</h1>
+        <p>请点击屏幕开始学习～</p>
+        <div>
+            <p class="output"><em>等待识别中……</em></p>
+            <button class="hint">请开始说话</button>
+            <p id="pinyin"><em>拼音转换中……</em></p>
+
+        </div>
+        <button onclick="translateMe()">开始转换</button>
+
+        <div class="keyboard"><span id='q'>q</span><span id='w'>w</span><span id='e'>e</span><span id='r'>r</span><span id='t'>t</span><span id='y'>y</span><span id='u'>u</span><span id='i'>i</span><span id='o'>o</span><span id='p'>p</span></div>
+        <div class="keyboard"> <span id='a'>a</span><span id='s'>s</span><span id='d'>d</span><span id='f'>f</span><span id='g'>g</span><span id='h'>h</span><span id='j'>j</span><span id='k'>k</span><span id='l'>l</span></div>
+        <div class="keyboard"><span id='z'>z</span><span id='x'>x</span><span id='c'>c</span><span id='v'>v</span><span id='b'>b</span><span id='n'>n</span><span id='m'>m</span></div>
+
+        <label for="text">写入文字</label>
+        <input type="text" id="inputText" name="text">
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/pinyin-pro"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script>
+
+    </script>
+
+</body>
+
+</html>

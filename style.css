@@ -1,9 +1,177 @@
+*{
+    font-family: SpaceGrotesk;
+}
+
 .keyboard{
-    color: blue;
-    font-size:64px;
-    transition: color 1s;
+    margin: 1vh 0vw;
 }
 
 .key{
-    color: blue;
+    font-family: 'Arial';
+    font-size: 25px;
+    color: black;
+    background-color:white;
+    border-radius: 10px;
+    width: 9vw;
+    height: 12vw;
+    margin: 1px 1px;
+    border: 2px rgb(131, 255, 234);
+    border-style: none solid solid none;
 }
+
+
+#greeting{
+    text-align:center; 
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    z-index: 1;
+}
+
+#touchcircle{
+    height: 120px;
+    width: 120px;
+    background-color: rgb(139, 255, 201);
+    border-radius: 50%;
+    top: 50vh;
+    left: 50vw;
+    position:fixed;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    filter: blur(2rem);
+    animation-name: circlemove;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes circlemove {
+    0% {
+        top: 25vh;
+        left: 20vw;
+        background-color: rgb(238, 255, 139);
+
+    }
+
+    20% {
+        top: 80vh;
+        left: 10vw;
+        background-color: rgb(255, 176, 139);
+
+    }
+
+    40% {
+        top: 40vh;
+        left: 70vw;
+        background-color: rgb(255, 139, 201);
+
+    }
+
+    60% {
+        top: 70vh;
+        left: 20vw;
+        background-color: rgb(232, 139, 255);
+
+    }
+
+    80% {
+        top: 30vh;
+        left: 60vw;
+        background-color: rgb(139, 176, 255);
+
+    }
+
+    100% {
+        top: 10vh;
+        left: 40vw;
+        background-color: rgb(139, 232, 255);
+
+    }
+  }
+
+#keyboardcontainer{ 
+    border-top: 0;
+    border-bottom: 0;
+    top: 60vh;
+    position: fixed;
+    overflow: hidden;
+    margin:0;
+    /* using viewport */
+    height: 75vh;
+    width:100vw;
+    z-index: -1;
+}
+
+#transitor{
+    width: 100vw; 
+    height: 100vh; 
+    position: fixed; 
+    z-index: -1; 
+    top: 0;
+}
+
+#hintcircle{
+    font-size: 24px;
+    display: flex; /* or inline-flex */
+    align-items: center; 
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    color: black;
+    background-color: #8bffc9;
+    border-radius: 50%;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+
+#hintcircle:active {
+    background-color: #ffa0fa;
+  }
+#hintcontainer{
+    font-size: 48px;
+    color:black;
+}
+.recognizer{
+    text-align: center;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+button{
+}
+
+.mobile-display {
+    display: none
+}
+
+.desktop-display {
+    display: block;
+}
+
+#pcmessage{
+    top: 50vh;
+    left: 50vw;
+    font-size: 48px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+
+@media (max-width:500px) {
+    .desktop-display {
+        display: none
+    }
+
+    .mobile-display {
+        display: block
+    }
+}
+
+@font-face { font-family: SpaceGrotesk; src: url('font/SpaceGrotesk-VariableFont_wght.ttf'); } 
