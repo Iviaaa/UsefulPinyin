@@ -1,5 +1,6 @@
 
 function translateMe() {
+  resetkeyboard();
   console.log("called");
   var chineseText = document.querySelector('.output').textContent;
   pinyinText = getPinyin(chineseText);
@@ -7,6 +8,14 @@ function translateMe() {
   currentLetter = pinyinText[0];
   currentIndex = 0;
   highlight();
+}
+
+function resetkeyboard(){
+  var keys = document.getElementsByClassName("key");
+  for (let i = 0; i < keys.length; i++) {
+    keys[i].style.backgroundColor = "white";
+    keys[i].style.color = "black"; 
+  }
 }
 
 function getPinyin(text) {
@@ -34,6 +43,9 @@ function learnPinyin(key){
       currentIndex++;
       if( currentIndex === pinyinText.length){
         alert("已经完成练习咯！点击确定，重新开始。");
+        resetkeyboard();
+      }else{
+        element.style.color = "#ffa0fa";
       }
       currentIndex = currentIndex % pinyinText.length;
       pressedKey.style.backgroundColor = "transparent";
@@ -42,7 +54,7 @@ function learnPinyin(key){
       audio.play();
       highlight();
   }
-  element.style.color = "#ffa0fa";
+  
 };
 
 
@@ -71,7 +83,13 @@ const keys = document.querySelectorAll('.key');
 
 
 hints.onclick = () => {
-  recognition.start();
+  try{
+    recognition.start();
+  }
+  catch(e){
+    console.log(e);
+  }
+  
 };
 
 hints.ontouchend = () =>{
