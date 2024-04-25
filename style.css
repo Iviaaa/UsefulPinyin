@@ -96,12 +96,12 @@
 #keyboardcontainer{ 
     border-top: 0;
     border-bottom: 0;
-    top: 60vh;
+    top: 50vh;
     position: fixed;
     overflow: hidden;
     margin:0;
     /* using viewport */
-    height: 75vh;
+    height: 60vh;
     width:100vw;
     z-index: -1;
 }
