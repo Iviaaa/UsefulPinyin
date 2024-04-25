@@ -116,14 +116,14 @@
 
 #hintcircle{
     -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
     font-size: 24px;
     display: flex; /* or inline-flex */
     align-items: center; 
     justify-content: center;
-    height: 120px;
-    width: 120px;
+    height: 200px;
+    width: 200px;
     color: black;
     background-color: #8bffc9;
     border-radius: 50%;
