@@ -13,7 +13,7 @@
     vertical-align: center;
     background-color:white;
     border-radius: 10px;
-    width: 7vw;
+    width: 8vw;
     height: 10vw;
     margin: 1px 1px;
     border: 2px rgb(131, 255, 234);
@@ -115,6 +115,9 @@
 }
 
 #hintcircle{
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
     font-size: 24px;
     display: flex; /* or inline-flex */
     align-items: center; 
