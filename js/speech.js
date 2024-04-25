@@ -89,17 +89,26 @@ hints.onclick = () => {
   catch(e){
     console.log(e);
   }
+  let circle = document.getElementById("hintcircle");
+  circle.style.backgroundColor = "#ffa0fa";
+  let hint = document.getElementById("circlehint");
+  hint.innerHTML= "录入中";
   
 };
 
-hints.ontouchend = () =>{
+hints.onspeechend = () =>{
   recognition.stop();
+  
 };
 
 recognition.onresult = (event) => {
   const text = event.results[0][0].transcript;
   diagnostic.textContent = `${text}`;
   translateMe();
+  let circle = document.getElementById("hintcircle");
+  circle.style.backgroundColor = "#8bffc9";
+  let hint = document.getElementById("circlehint");
+  hint.innerHTML= "点我";
 };
 
 // recognition.onspeechend = () => {
